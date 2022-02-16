@@ -4,7 +4,7 @@
 ### Generate environment:
 ###### The map that our agent need to pass is a 100 by 100 environment. it starts from (5,5) and reaches goal when it arrives (99,99). 14 obstacles are on the map, and I let all obstacles be circular with radius 3 for convenience. All obstacles have 3 additional radius unit safe area, which means our agent not only cannot collide obstacles, but also not allowed to enter safe area.
 ##### Environment:
-![]
+![env](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/Environment.png)
 ###### .
 ### Path planning
 #### Extend tree:
