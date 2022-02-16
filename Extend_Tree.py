@@ -60,8 +60,5 @@ def extendtree(tree, targetnode, obs_pos, r, env_corner1, env_corner2):
 	if  (dist_end < step_length):
 		new_tree[-1][1] = 1 
 
-	# tracking path
-	print(tree[-1])
-
 	return new_tree
 
