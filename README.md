@@ -51,7 +51,7 @@
 #### Agent path
 ![path](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/Figure_6.png)
 #### Error
-![error](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/error.png)
+![error](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/error_u.png)
 ###### .
 ### Notice
 ###### Since every point is generated randomly, simulation may varies. The higher the sample times are, the better the path is. The shorter the step unit is, the smoother the path is.
