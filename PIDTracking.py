@@ -36,8 +36,10 @@ def trackcontroller(xdata, ydata, start, target):
 			u = Kp*th_error + Ki*error_sum + Kd*(th_error-th_error_pre)
 			th_error_pre = th_error 
 
-			if np.abs(u*dt > ulim):
+			if u*dt > ulim:
 				ut = ulim
+			elif u*dt < -ulim:
+				udt = -ulim
 			else:
 				ut = u*dt
 
