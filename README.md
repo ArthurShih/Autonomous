@@ -55,4 +55,7 @@
 ###### .
 ### Notice
 ###### Since every point is generated randomly, simulation may varies. The higher the sample times are, the better the path is. The shorter the step unit is, the smoother the path is.
-###### In the code, I set sample times = 5000, and step unit = 5
+###### For previous figures, I set sample times = 5000, and step unit = 5
+###### If samples 10000 times, and set unit step = 2
+##### Agent dynamic
+![10000dynamic](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/10000_dynamic.mov)
