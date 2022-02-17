@@ -18,15 +18,15 @@
 ###### Every time we generate a new point, collision detection computes the distance between new point and center of obstacle. If the distance is less than safe area's radius, we drop this new point and generate another random point.
 ###### By applying Extend tree and Collision detection thousands of times, we have roughly hundreds of paths that start from our start point.
 ###### .
-##### Samples 3000 times
+##### Samples 1000 times
 ![1000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/1000.png)
-##### Samples 6000 times
+##### Samples 2000 times
 ![2000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/2000.png)
-##### Samples 9000 times
+##### Samples 3000 times
 ![3000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/3000.png)
-##### Samples 12000 times
+##### Samples 4000 times
 ![4000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/4000.png)
-##### Samples 15000 times
+##### Samples 5000 times
 ![5000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/5000.png)
 ###### .
 #### Find Minimum path
