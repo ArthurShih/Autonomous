@@ -21,10 +21,11 @@ def findpath(tree,endnode):
 		index = ind[tag] 
 		node = np.array([tree[index]],dtype=object)
 		path = np.concatenate((node,endnode))
-		parent_node = tree[index][3]
-		while parent_node>1:
-			parent_node = tree[parent_node][3]
-			pre_node = np.array([tree[parent_node]],dtype=object)
+		parent_ind = tree[index][3]
+		while parent_ind>1:
+			current_ind = tree[parent_ind][3]
+			pre_node = np.array([tree[parent_ind]],dtype=object)
 			path = np.concatenate((pre_node,path))
+			parent_ind = current_ind
 
 	return path

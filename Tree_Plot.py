@@ -4,8 +4,6 @@ import Obstacles_Plot
 def treeplot(tree, plot_tree, obs_pos, r, R):
 	(N,k) = np.shape(tree)
 
-
-
 	if plot_tree == 0:
 		(G,k) = np.shape(obs_pos)
 		figure, axes = plt.subplots()
@@ -17,7 +15,6 @@ def treeplot(tree, plot_tree, obs_pos, r, R):
 		node = np.array([tree[N-1][0]],dtype = object)
 		parent_node = tree[N-1][3]
 		while parent_node > 1:
-			current_parent = parent_node
 			current_node = np.array([tree[parent_node][0]],dtype=object)
 			branch = np.concatenate((current_node,node))
 			parent_node = tree[parent_node][3]

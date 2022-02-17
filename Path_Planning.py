@@ -66,12 +66,6 @@ def RRT(start, target, obs_pos, r, env_corner1, env_corner2, R):
 		
 		Tree_Plot.treeplot(tree10,plot_tree, obs_pos, r, R)
 
-
-
-
-
-
-
 	(N,k) = np.shape(tree)
 	count = 0
 	for i in range(N):

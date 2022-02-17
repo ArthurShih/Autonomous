@@ -9,7 +9,6 @@ def extendtree(tree, targetnode, obs_pos, r, env_corner1, env_corner2):
 	dim = 2 # x and y
 	while flag == 0:
 		# generate a random point in environment
-		random_point = np.ones(dim) 
 		random_point = np.array([(env_corner2[0]-env_corner1[0]) * random.random(),(env_corner2[1]-env_corner1[1]) * random.random()])
 
 		(N,k) = np.shape(tree)

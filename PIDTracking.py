@@ -23,7 +23,7 @@ def trackcontroller(xdata, ydata, start, target):
 		dist = np.sqrt(dist_x + dist_y)
 		error_sum = 0
 		th_error_pre = 0
-		k=0
+		k = 0
 		while (dist > 0.1):
 			if (target_x-start_x)<0:
 				th_p = np.pi+np.arctan((target_y-start_y)/(target_x-start_x))
