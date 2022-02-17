@@ -9,10 +9,11 @@ def trackcontroller(xdata, ydata, start, target):
 	V = 1
 	dt = 0.1	
 	th_d = np.pi/4
-	ulim = 10
+	ulim = 1
 	start_x = 4
 	start_y = 3
 	error_data = []
+	udata = []
 	for i in range(N):
 		print(i)
 		target_x = xdata[i]
@@ -40,6 +41,8 @@ def trackcontroller(xdata, ydata, start, target):
 			else:
 				ut = u*dt
 
+			udata.append(ut)
+
 			angle = ut + th_d
 
 			start_x = start_x + V*np.cos(angle)*dt
@@ -57,7 +60,7 @@ def trackcontroller(xdata, ydata, start, target):
 			plt.pause(0.00001)
 
 
-	return error_data
+	return [error_data,udata]
 
 
 

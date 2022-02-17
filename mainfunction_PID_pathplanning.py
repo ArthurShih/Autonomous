@@ -51,13 +51,20 @@ plt.xlim([0,100])
 plt.ylim([0,100])
 
 # PID controller
-error_data = PIDTracking.trackcontroller(xdata,ydata,start,target)
+data = PIDTracking.trackcontroller(xdata,ydata,start,target)
 plt.show()
 
-(N,) = np.shape(error_data)
+(k,N) = np.shape(data)
 t_start = 0
 t_end = N
 t = np.arange(t_start, t_end, 1)
 plt.figure()
-plt.plot(t,error_data,"g-")
+plt.subplot(211)
+plt.title("error")
+plt.plot(t,data[0],"g-")
+plt.grid()
+plt.subplot(212)
+plt.title("u")
+plt.plot(t,data[1],"r-")
+plt.grid()
 plt.show()
