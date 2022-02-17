@@ -55,4 +55,4 @@
 ###### .
 ### Notice
 ###### Since every point is generated randomly, simulation may varies. The higher the sample times are, the better the path is. The shorter the step unit is, the smoother the path is.
-###### In the code, I set sample times = 15000, and step unit = 1.5 
+###### In the code, I set sample times = 5000, and step unit = 5
