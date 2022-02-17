@@ -31,7 +31,7 @@ start = np.array([5,5])
 target = np.array([99,99])
 
 # Path planning
-# path = Path_Planning.RRT(start, target, obs_pos, r, env_corner1,env_corner2,R)
+path = Path_Planning.RRT(start, target, obs_pos, r, env_corner1,env_corner2,R)
 
 # Plotting obstacles with safe area
 figure, axes = plt.subplots()
@@ -39,19 +39,25 @@ for i in range(N):
 	Obstacles_Plot.obstacles_safearea(obs_pos, r, R, i, axes)
 	Obstacles_Plot.obstacles(obs_pos,r,i,axes)
 
-# # Plotting path
-# (N,k) = np.shape(path)
-# xdata = np.zeros(N)
-# ydata = np.zeros(N)
-# for i in range(N):
-# 	xdata[i] = path[i][0][0]
-# 	ydata[i] = path[i][0][1]
-# plt.plot(xdata,ydata,'r-')
-# plt.xlim([0,100])
-# plt.ylim([0,100])
+# Plotting path
+(N,k) = np.shape(path)
+xdata = np.zeros(N)
+ydata = np.zeros(N)
+for i in range(N):
+	xdata[i] = path[i][0][0]
+	ydata[i] = path[i][0][1]
+plt.plot(xdata,ydata,'r-')
+plt.xlim([0,100])
+plt.ylim([0,100])
 
 # PID controller
-# drone_path = PIDTracking.trackcontroller(xdata,ydata,start,target)
-plt.xlim(0,100)
-plt.ylim(0,100)
+error_data = PIDTracking.trackcontroller(xdata,ydata,start,target)
+plt.show()
+
+(N,) = np.shape(error_data)
+t_start = 0
+t_end = N
+t = np.arange(t_start, t_end, 1)
+plt.figure()
+plt.plot(t,error_data,"g-")
 plt.show()

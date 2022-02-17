@@ -13,7 +13,7 @@ def RRT(start, target, obs_pos, r, env_corner1, env_corner2, R):
 
 	tree = start_node
 
-	samples = 8000 # sample times
+	samples = 5000 # sample times
 
 	plot_tree = 0
 	for i in range(samples):

@@ -12,8 +12,7 @@ def trackcontroller(xdata, ydata, start, target):
 	ulim = 10
 	start_x = 4
 	start_y = 3
-	drone_xdata = []
-	drone_ydata = []
+	error_data = []
 	for i in range(N):
 		print(i)
 		target_x = xdata[i]
@@ -51,14 +50,14 @@ def trackcontroller(xdata, ydata, start, target):
 			dist_y = (target_y - start_y)**2
 			dist = np.sqrt(dist_x + dist_y)
 
-			drone_xdata.append(start_x)
-			drone_ydata.append(start_y)
+			error_data.append(th_error)
 
 			plt.plot(start_x,start_y,"ro")
 			plt.show(block=False)
-			plt.pause(0.01)
+			plt.pause(0.00001)
 
-	return np.array([drone_xdata,drone_ydata])
+
+	return error_data
 
 
 

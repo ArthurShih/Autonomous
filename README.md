@@ -18,20 +18,41 @@
 ###### Every time we generate a new point, collision detection computes the distance between new point and center of obstacle. If the distance is less than safe area's radius, we drop this new point and generate another random point.
 ###### By applying Extend tree and Collision detection thousands of times, we have roughly hundreds of paths that start from our start point.
 ###### .
-##### Samples 2000 times
-![]
-##### Samples 4000 times
-![]
+##### Samples 3000 times
+![3000]
 ##### Samples 6000 times
-![]
-##### Samples 8000 times
-![]
-##### Samples 10000 times
-![]
+![6000]
+##### Samples 9000 times
+![9000]
+##### Samples 12000 times
+![12000]
+##### Samples 15000 times
+![15000]
 ###### .
 #### Find Minimum path
 ###### Now, we have tons of paths that starts from start point. To find the minimum cost path that arrives end point, we first find which new point we remembered is less than one step unit from end point. If there are more than one points, we choose the one has minimum cost(shortest path).
 ###### Last, starts from end point, we connect new points we generated before by their label
 ##### Minimum Path
-![]
+![Minpath]
 ###### .
+### PID controller
+###### To make our agent follow our desired path, I use PID controller. 
+###### First, I cut the desired path into several segements, and each segement has it's own target point. When our agent enter a segement, it follows the path by PID controller until it reaches the target point, and then enter next segement.
+###### Our agent is controlled by angle of agent and segement's target point, and Kp = 5, Ki = 0.5, Kd = 0.1.
+###### .
+###### delta x = V*cos(theta)*dt
+###### delta y = V*sin(theta)*dt
+###### delta theta = u*dt
+###### u = Kp*u + Ki*u_sum + Kd*(du/dt)
+###### .
+### Result
+#### Agent dynamic
+![dynamic]
+#### Agent path
+![path]
+#### Error
+![error]
+###### .
+### Notice
+###### Since every point is generated randomly, simulation may varies. The higher the sample times are, the better the path is. The shorter the step unit is, the smoother the path is.
+###### In the code, I set sample times = 15000, and step unit = 1.5 

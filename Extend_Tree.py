@@ -4,7 +4,7 @@ import random
 import Collision
 
 def extendtree(tree, targetnode, obs_pos, r, env_corner1, env_corner2):
-	step_length = 1.5 # distance that the agent can move every simulation
+	step_length = 5 # distance that the agent can move every simulation
 	flag = 0
 	dim = 2 # x and y
 	while flag == 0:
