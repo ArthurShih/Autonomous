@@ -19,21 +19,21 @@
 ###### By applying Extend tree and Collision detection thousands of times, we have roughly hundreds of paths that start from our start point.
 ###### .
 ##### Samples 3000 times
-![3000]
+![1000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/1000.png)
 ##### Samples 6000 times
-![6000]
+![2000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/2000.png)
 ##### Samples 9000 times
-![9000]
+![3000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/3000.png)
 ##### Samples 12000 times
-![12000]
+![4000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/4000.png)
 ##### Samples 15000 times
-![15000]
+![5000](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/5000.png)
 ###### .
 #### Find Minimum path
 ###### Now, we have tons of paths that starts from start point. To find the minimum cost path that arrives end point, we first find which new point we remembered is less than one step unit from end point. If there are more than one points, we choose the one has minimum cost(shortest path).
 ###### Last, starts from end point, we connect new points we generated before by their label
 ##### Minimum Path
-![Minpath]
+![Minpath](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/path.png)
 ###### .
 ### PID controller
 ###### To make our agent follow our desired path, I use PID controller. 
@@ -47,11 +47,11 @@
 ###### .
 ### Result
 #### Agent dynamic
-![dynamic]
+![dynamic](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/dynamic.mov)
 #### Agent path
-![path]
+![path](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/Figure_6.png)
 #### Error
-![error]
+![error](https://github.com/ArthurShih/Autonomous_agent_python/blob/main/figure/error.png)
 ###### .
 ### Notice
 ###### Since every point is generated randomly, simulation may varies. The higher the sample times are, the better the path is. The shorter the step unit is, the smoother the path is.
