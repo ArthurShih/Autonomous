@@ -26,7 +26,7 @@ def extendtree(tree, targetnode, obs_pos, r, env_corner1, env_corner2):
 
 		# collision detection
 		if (Collision.collision(tree[ind][0], new_point, obs_pos, r)==0):
-			min_cost = (new_point[0]-tree[ind][0][0])**2 + (new_point[1]-tree[ind][0][1])**2
+			min_cost = tree[ind][2] + (new_point[0]-tree[ind][0][0])**2 + (new_point[1]-tree[ind][0][1])**2
 			min_ind = ind
 			near_ind = []
 			# optimizing path
@@ -34,7 +34,7 @@ def extendtree(tree, targetnode, obs_pos, r, env_corner1, env_corner2):
 				dist_x = tree[i][0][0] - new_point[0]
 				dist_y = tree[i][0][1] - new_point[1]
 				dist = dist_x**2 + dist_y**2
-				if (dist<r**2):
+				if (dist<6**2):
 					near_ind.append(i)
 			(N,) = np.shape(near_ind)
 			if (N>1):
@@ -50,8 +50,19 @@ def extendtree(tree, targetnode, obs_pos, r, env_corner1, env_corner2):
 			# collecting data of new point and it's previous node
 			new_node = np.array([[new_point,0,min_cost,min_ind]],dtype = object)
 			new_tree = np.concatenate((tree,new_node))
-			flag = 1
+			(R,C) = np.shape(new_tree)
+			
 
+			if (N>1):
+				for i in range(N):
+					ind = near_ind[i]
+					near_cost = new_tree[ind][2]
+					loc_cost = (new_point[0]-new_tree[ind][0][0])**2 + (new_point[1]-new_tree[ind][0][1])**2
+					if (near_cost > min_cost + loc_cost):
+						if (Collision.collision(new_tree[ind][0], new_point, obs_pos, r)>0):
+							new_tree[ind][3] = R-1
+
+			flag = 1
 	# label the end node
 	dist_end_x = targetnode[0][0][0] - new_point[0]	
 	dist_end_y = targetnode[0][0][1] - new_point[1]

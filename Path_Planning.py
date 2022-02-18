@@ -56,15 +56,15 @@ def RRT(start, target, obs_pos, r, env_corner1, env_corner2, R):
 
 	if plot_tree == 0:
 		
-		Tree_Plot.treeplot(tree2,plot_tree, obs_pos, r, R)
+		Tree_Plot.treeplot(tree2, plot_tree, obs_pos, r, R, start_node)
 		
-		Tree_Plot.treeplot(tree4,plot_tree, obs_pos, r, R)
+		Tree_Plot.treeplot(tree4, plot_tree, obs_pos, r, R, start_node)
 		
-		Tree_Plot.treeplot(tree6,plot_tree, obs_pos, r, R)
+		Tree_Plot.treeplot(tree6, plot_tree, obs_pos, r, R, start_node)
 		
-		Tree_Plot.treeplot(tree8,plot_tree, obs_pos, r, R)
+		Tree_Plot.treeplot(tree8, plot_tree, obs_pos, r, R, start_node)
 		
-		Tree_Plot.treeplot(tree10,plot_tree, obs_pos, r, R)
+		Tree_Plot.treeplot(tree10, plot_tree, obs_pos, r, R, start_node)
 
 	(N,k) = np.shape(tree)
 	count = 0
@@ -74,6 +74,7 @@ def RRT(start, target, obs_pos, r, env_corner1, env_corner2, R):
 
 	if (count>0): 
 		path = MinPath.findpath(tree, target_node)
+		path = np.concatenate((start_node,path))
 		return path
 	else:
 		print("Try again!") # cannot find end node

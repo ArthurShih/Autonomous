@@ -40,6 +40,7 @@ for i in range(N):
 	Obstacles_Plot.obstacles(obs_pos,r,i,axes)
 
 # Plotting path
+print("Plotting path")
 (N,k) = np.shape(path)
 xdata = np.zeros(N)
 ydata = np.zeros(N)
